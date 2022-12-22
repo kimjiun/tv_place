@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/search_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/spacing_small"
+        >
+
+        <EditText
+            android:id="@+id/search_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:singleLine = "true"
+            android:lines = "1"
+            android:imeOptions="actionSearch"
+             />
+
+        <TextView
+            android:id="@+id/search_submit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:text="검색"
+            android:background="@color/text_color_gray"
+            android:textColor="@color/text_color_white"
+            android:textSize="@dimen/text_size_medium"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/search_choice"
+        android:layout_below="@+id/search_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_small2"
+        android:layout_marginRight="@dimen/spacing_medium"
+        android:layout_marginLeft="@dimen/spacing_medium"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/search_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/search_name"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/text_color_green"
+            android:background="@drawable/edge"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/search_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/search_location"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/text_color_black"
+            android:background="@drawable/edge"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/search_keyword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/search_keyword"
+            android:textSize="@dimen/text_size_medium"
+            android:textColor="@color/text_color_black"
+            android:background="@drawable/edge"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/search_result"
+        android:layout_below="@+id/search_choice"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/spacing_small2"
+        android:dividerHeight="@dimen/spacing_small"/>
+
+    <TextView
+        android:id="@+id/search_no_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_choice"
+        android:padding="@dimen/spacing_small"
+        android:background="@color/text_color_red"
+        android:layout_marginTop="@dimen/spacing_small2"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="@string/no_data"
+        android:textColor="@color/text_color_white"
+        android:textSize="@dimen/text_size_small2"
+        android:textStyle="bold"/>
+
+
+</RelativeLayout>

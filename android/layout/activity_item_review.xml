@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/item_review_top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/spacing_small2"
+            android:layout_marginLeft="@dimen/spacing_small2"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edit_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_small"
+                android:scrollbars="vertical"
+                android:lines="3"
+                android:maxLines="3"
+                android:cursorVisible="true"
+                android:background="@drawable/bg_edittext"
+                android:inputType="text|textMultiLine|textNoSuggestions"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_marginTop="@dimen/spacing_small">
+                <RatingBar
+                    android:id="@+id/item_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:max="5"
+                    android:rating="5"
+                    android:stepSize="1"
+                    android:isIndicator="false"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator" />
+                <Button
+                    android:id="@+id/btn_review_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/spacing_small2"
+                    android:textSize="@dimen/spacing_medium"
+                    android:text="@string/make_review"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/item_review"
+            android:layout_below="@+id/item_review_top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="@dimen/spacing_small" />
+
+        <TextView
+            android:id="@+id/no_review"
+            android:layout_below="@+id/item_review_top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:gravity="center"
+            android:padding="@dimen/spacing_small"
+            android:text="@string/no_review"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_small2"
+            android:textStyle="bold"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

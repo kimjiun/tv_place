@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/my_review"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:dividerHeight="@dimen/spacing_small" />
+
+        <TextView
+            android:id="@+id/my_no_review"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_red_dark"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:gravity="center"
+            android:padding="@dimen/spacing_small"
+            android:text="@string/no_review"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_small2"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+</LinearLayout>
